@@ -128,4 +128,16 @@ describe("enhancer.js", function() {
       }).toThrow();
     });
   });
+
+  //GET FUNCTION
+  describe(".get()", function() {
+    it("should return item name modified with enhancement level", function() {
+      let fishing_rod = {};
+      fishing_rod.enhancement = 5;
+      fishing_rod.name = "Golden Fishing Rod";
+      const gotten = get(fishing_rod);
+
+      expect(gotten.name).toBe("[+5] Golden Fishing Rod");
+    });
+  });
 });
